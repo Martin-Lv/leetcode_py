@@ -7,11 +7,13 @@ To remove the nth node from a singly-linked list, we need the node before the nt
 5. return the next of before_head. for the head may need to be removed.
 """
 
+from common import *
+
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
