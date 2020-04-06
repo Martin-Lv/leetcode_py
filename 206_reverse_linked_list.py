@@ -8,17 +8,13 @@ from common import *
 
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head:
-            return head
         # use a variable to keep the previous node
-        prev = head
-        walker = head.next
+        prev = None
+        walker = head
         while walker:
-            # use a temp variable to keep the b.next
+            # use a temp variable to keep the walker.next
             tmp = walker.next
             walker.next = prev
-            if prev == head:
-                prev.next = None
             prev = walker
             walker = tmp
         return prev
