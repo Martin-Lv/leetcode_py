@@ -4,6 +4,7 @@ class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         if not head:
             return None
+        # use dummy node to point to head
         dummy = ListNode(0)
         dummy.next = head
         prev = dummy
