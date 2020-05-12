@@ -26,7 +26,21 @@ class Solution:
 
         return end - start + 1
 
+class Solution2:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0:
+            return 0
+        length = 0
+        start = 0
+        indexDict = {}
+        for i, c in enumerate(s):
+            if c in indexDict:
+                start = max(start, indexDict[c] + 1)
+            indexDict[c] = i
+            length = max(length, i - start + 1)
+        return length
+
 if __name__ == "__main__":
     s = "abcabcbb"
-    i = Solution().lengthOfLongestSubstring(s)
+    i = Solution2().lengthOfLongestSubstring(s)
     print(i)
